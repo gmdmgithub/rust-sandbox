@@ -1,4 +1,5 @@
 pub fn go() {
+    println!("########## Hi {} prints here ##########", "Alex");
     println!("My name is {} and I'm {}", "Stive", 27);
 
     //position is like below
@@ -12,4 +13,6 @@ pub fn go() {
 
     //Traits placeholders
     println!("Binary {:b} Octo {:o} Hex {:x} for number {number}" , 12, 12, 12, number=12 );
+
+    println!("########## Bey {} prints here ##########", "Alex");
 }
