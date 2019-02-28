@@ -1,5 +1,6 @@
-// extern crate chrono;
-// use chrono::{Utc};
+extern crate chrono;
+use chrono::prelude::*;
+
 
 fn assertion_test(){
 
@@ -32,14 +33,29 @@ pub fn go() {
     let (new_name, new_age) = ("Anakin", 41);
     println!("My new name {} and I'm {}", new_name, new_age);
     inner();
+    data_time();
+    loop_test();
+
     assertion_test();
     println!("########## Bey {} Simple here ##########", "Alex");
 }
 
-fn inner() {
-    // let now = Utc::now();
-    // println!("Month is {}",now.month() );
+fn data_time(){
 
+    let now = Local::now();
+
+    println!("Month is {}",now.month() );
+    
+    println!("Local Time is {:?} and day {:?} ", now, now.weekday());
+
+}
+
+fn inner() {
+    // let now = Local::now();
+    // let mut current_month = 1;
+    // if now.month() < 12{
+    //     current_month = now.month();
+    // }
     let heart_eyed_cat = '😻';
     let unicode_char = '\u{1F923}';
     println!(
@@ -94,4 +110,37 @@ fn string_operations() {
         println!("{}", word);
     }
 
+}
+
+fn loop_test(){
+
+    //fizbuzz test - for loop with range
+    for x in 1..19 {
+        if x % 15 == 0 {
+            println!("fizzbuzz {}", x);
+        } else if x % 3 == 0 {
+            println!("fizz {}", x);
+        } else if x % 5 == 0 {
+            println!("buzz {}", x);
+        } 
+        // else {
+        //     println!("{}", x);
+        // }
+    }
+    let mut count = 1;
+    //While Loop (FizzBuzz)
+    while count <= 23 {
+        if count % 15 == 0 {
+            println!("while fizzbuzz {}", count);
+        } else if count % 3 == 0 {
+            println!("while fizz {}", count);
+        } else if count % 5 == 0 {
+            println!("while buzz {}", count);
+        } 
+        // else {
+        //     println!("while :( {}", count);
+        // }
+        // Inc
+        count += 1;
+    }
 }
