@@ -18,6 +18,7 @@ fn main() {
     println!("Multiplication {}", val);
 
     struct_enum::run_struct();
+    struct_enum::run_enum();
 
     //assersion failed as last one
     simple::go();
